@@ -10,7 +10,7 @@ module "docdb_autoscaler" {
 
   ## CW manager
   docdb_cluster_name        = "stagdocdb-transrep-cluster"
-  cw_manager_image_uri      = "ghcr.io/cheelim1/docdb-autoscaler/image:<tag>"
+  cw_manager_image_uri      = "<imageTag>"
   metric_name               = "CPUUtilization"
   threshold_scale_out       = "50" # 50%
   threshold_scale_in        = "30" # 30%
@@ -23,7 +23,7 @@ module "docdb_autoscaler" {
   target_value                    = 40   # 40%
   docdb_scale_out_cooldown_period = 600  # 10 minutes
   docdb_scale_in_cooldown_period  = 1200 # 20 minutes
-  docdb_autoscaler_image_uri      = "<tag>"
+  docdb_autoscaler_image_uri      = "<imageTag>"
   instance_type                   = "db.tg.medium" #OPTIONAL: to explictly choose the autoscale reader instance type
 
   tags = {
