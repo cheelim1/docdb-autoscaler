@@ -42,6 +42,7 @@ Autoscaling via metric.
 ### HOW TO USE:
 1. Verify the docker image is valid. It should be available here: [LINK](https://github.com/cheelim1/docdb-autoscaler/pkgs/container/docdb-autoscaler)
 2. Enable DocumentDB Autoscaling via Terraform, which can be found here -> [LINK](https://github.com/cheelim1/docdb-autoscaler/tree/main/infrastructure/examples)
+3. Pull the docker image into your AWS ECR. AWS Lambda container images must reside in AWS ECR.
 
 ### Debug & Troubleshooting
 1. Go to the AWS Lambda function -> Monitor & check if the Lambda function was invoked

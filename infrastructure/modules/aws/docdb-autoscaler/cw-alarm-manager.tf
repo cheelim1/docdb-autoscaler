@@ -94,7 +94,7 @@ resource "aws_lambda_function" "lambda_scale_out" {
   count = var.scheduled_scaling ? 0 : 1
 
   function_name = "${var.docdb_cluster_name}-scale-out"
-  image_uri     = "ghcr.io/cheelim1/docdb-autoscaler/image:${var.cw_manager_image_uri}"
+  image_uri     = "${data.aws_caller_identity.current.account_id}.dkr.ecr.${var.aws_region}.amazonaws.com/${var.cw_manager_image_uri}"
   role          = aws_iam_role.lambda_cw_manager_role[0].arn
   package_type  = "Image"
   timeout       = 60
@@ -112,7 +112,7 @@ resource "aws_lambda_function" "lambda_scale_in" {
   count = var.scheduled_scaling ? 0 : 1
 
   function_name = "${var.docdb_cluster_name}-scale-in"
-  image_uri     = "ghcr.io/cheelim1/docdb-autoscaler/image:${var.cw_manager_image_uri}"
+  image_uri     = "${data.aws_caller_identity.current.account_id}.dkr.ecr.${var.aws_region}.amazonaws.com/${var.cw_manager_image_uri}"
   role          = aws_iam_role.lambda_cw_manager_role[0].arn
   package_type  = "Image"
   timeout       = 60

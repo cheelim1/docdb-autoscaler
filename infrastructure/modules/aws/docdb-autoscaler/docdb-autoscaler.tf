@@ -109,7 +109,7 @@ resource "aws_lambda_function" "docdb_autoscaler_lambda" {
   function_name = "${var.docdb_cluster_name}-docdb-autoscaler"
 
   package_type = "Image"
-  image_uri    = "ghcr.io/cheelim1/docdb-autoscaler/image:${var.docdb_autoscaler_image_uri}"
+  image_uri    = "${data.aws_caller_identity.current.account_id}.dkr.ecr.${var.aws_region}.amazonaws.com/${var.docdb_autoscaler_image_uri}"
   role         = aws_iam_role.lambda_docdb_autoscaler_role.arn
 
   environment {
