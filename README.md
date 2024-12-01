@@ -50,3 +50,6 @@ Autoscaling via metric.
 3. Check the Cloudwatch Alarms and History
 4. Check EventBridge rules
 5. Check the Lambda Permissions & Environment Variables 
+
+#### Estimated Cost $ to run this custom docdb autoscaler solution
+Below $3 usd/month in total, including running cw-alarm manager lambda.
