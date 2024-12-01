@@ -52,4 +52,5 @@ Autoscaling via metric.
 5. Check the Lambda Permissions & Environment Variables 
 
 #### Estimated Cost $ to run this custom docdb autoscaler solution
-Below $3 usd/month in total, including running cw-alarm manager lambda.
+Below $3 usd/month in total, including running cw-alarm manager lambda. 
+Price differs based on the frequency of invoking the lambda and cloudwatch log group retention period.
